@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS Audio — Cotizador Profesional</title>
+
+    <meta name="description" content="Audio e iluminación profesional en Querétaro. 7 paquetes adaptados a tu evento.">
+    <meta property="og:title" content="DS Audio — Paquetes de Sonido y Luces">
+    <meta property="og:image" content="DS-logo.jpeg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --accent: #ff3c6e;
+            --gold: #f5c842;
+            --cyan: #00e5ff;
+            --text: #ffffff;
+            --card-bg: rgba(10, 10, 18, 0.9);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { background: #000; color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+
+        /* FONDO PRINCIPAL (Usando una de tus fotos de iluminación) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('image_audio e iluminación_1.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.25) blur(2px);
+            z-index: -1;
+        }
+
+        header { padding: 60px 24px 30px; text-align: center; }
+        .logo-img { 
+            width: 130px; height: 130px; border-radius: 50%; border: 2px solid var(--cyan);
+            background: #000; box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+            object-fit: cover; margin-bottom: 20px;
+        }
+
+        h1 { font-family: 'Bebas Neue', sans-serif; font-size: 70px; letter-spacing: -1px; margin-bottom: 10px; }
+        .subtitle { color: var(--cyan); font-size: 14px; letter-spacing: 4px; text-transform: uppercase; font-weight: 700; }
+
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+
+        /* TARJETAS CON FOTOS */
+        .card { 
+            background: var(--card-bg); border-radius: 24px; overflow: hidden;
+            border: 1px solid var(--border); transition: 0.4s ease;
+            display: flex; flex-direction: column;
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--c); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+        .card-img { width: 100%; height: 180px; object-fit: cover; border-bottom: 4px solid var(--c); }
+
+        .card-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+        .pkg-num { font-size: 11px; font-weight: 800; color: var(--c); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .card-title { font-family: 'Bebas Neue', sans-serif; font-size: 32px; margin-bottom: 15px; }
+
+        .price-box { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; margin-bottom: 20px; }
+        .price { font-size: 36px; font-family: 'Bebas Neue', sans-serif; color: #fff; }
+        .price span { font-size: 14px; font-family: 'Plus Jakarta Sans'; color: var(--muted); }
+
+        .list { list-style: none; margin-bottom: 25px; flex-grow: 1; }
+        .list li { font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; color: #d0d0d0; }
+        .list li i { color: var(--c); font-size: 12px; }
+
+        /* COLORES */
+        .card[data-cat="fiesta"] { --c: var(--accent); }
+        .card[data-cat="premium"] { --c: #b06cfb; }
+        .card[data-cat="karaoke"] { --c: var(--gold); }
+        .card[data-cat="basico"] { --c: var(--cyan); }
+
+        .btn {
+            background: var(--c); color: #000; padding: 15px; border-radius: 12px;
+            text-decoration: none; text-align: center; font-weight: 700; font-size: 14px;
+            text-transform: uppercase; transition: 0.3s;
+        }
+        .btn:hover { filter: brightness(1.2); transform: scale(1.02); }
+
+        .wa-float {
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+            background: #25d366; border-radius: 50%; display: flex; justify-content: center;
+            align-items: center; color: #fff; font-size: 30px; z-index: 100;
+        }
+
+        @media (max-width: 600px) { h1 { font-size: 50px; } }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/524462975115" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <header>
+        <img src="DS-logo.jpeg" alt="Logo" class="logo-img">
+        <h1>DS AUDIO</h1>
+        <p class="subtitle">Santiago de Querétaro</p>
+    </header>
+
+    <div class="section-container">
+        <div class="grid">
+            <div class="card" data-cat="fiesta">
+                <img src="image DJ_1.jpg" class="card-img">
+                <div class="card-content">
+                    <span class="pkg-num">Paquete 1</span>
+                    <h2 class="card-title">Fiesta Iluminada</h2>
+                    <div class="price-box"><div class="price">$920 <span>/ hr + traslado</span></div></div>
+                    <ul class="list">
+                        <li><i class="fas fa-check"></i> Cabina DJ Luxury & Luces</li>
+                        <li><i class="fas fa-check"></i> Servicio de DJ</li>
+                        <li><i class="fas fa-check"></i> Subwoofer + 2 Torres</li>
+                    </ul>
+                    <a href="https://wa.me/524462975115?text=Info%20Paquete%201" class="btn">Reservar ahora</a>
+                </div>
+            </div>
+
+            <div class="card" data-cat="premium">
+                <img src="imagen audio e iluminación_2.jpg" class="card-img">
+                <div class="card-content">
+                    <span class="pkg-num">Paquete 2</span>
+                    <h2 class="card-title">Experiencia Premium</h2>
+                    <div class="price-box"><div class="price">$720 <span>/ hr + traslado</span></div></div>
+                    <ul class="list">
+                        <li><i class="fas fa-check"></i> 2 Subwoofers & 4 Medios</li>
+                        <li><i class="fas fa-check"></i> 3 Micrófonos Pro</li>
+                        <li><i class="fas fa-check"></i> Apoyo Técnico Especializado</li>
+                    </ul>
+                    <a href="https://wa.me/524462975115?text=Info%20Paquete%202" class="btn">Reservar ahora</a>
+                </div>
+            </div>
+
+            <div class="card" data-cat="karaoke">
+                <img src="imagen karaoke_3.jpg" class="card-img">
+                <div class="card-content">
+                    <span class="pkg-num">Paquete 3</span>
+                    <h2 class="card-title">Karaoke con Luces</h2>
+                    <div class="price-box"><div class="price">$690 <span>/ hr + traslado</span></div></div>
+                    <ul class="list">
+                        <li><i class="fas fa-check"></i> Proyector y Pantalla</li>
+                        <li><i class="fas fa-check"></i> 2 Micrófonos inalámbricos</li>
+                        <li><i class="fas fa-check"></i> Audio + Iluminación</li>
+                    </ul>
+                    <a href="https://wa.me/524462975115?text=Info%20Paquete%203" class="btn">Reservar ahora</a>
+                </div>
+            </div>
+
+            <div class="card" data-cat="karaoke">
+                <img src="imagen karaoke_2.jpg" class="card-img">
+                <div class="card-content">
+                    <span class="pkg-num">Paquete 4</span>
+                    <h2 class="card-title">Karaoke Estándar</h2>
+                    <div class="price-box"><div class="price">$620 <span>/ hr + traslado</span></div></div>
+                    <ul class="list">
+                        <li><i class="fas fa-check"></i> Proyector y Pantalla</li>
+                        <li><i class="fas fa-check"></i> Micrófonos inalámbricos</li>
+                        <li><i class="fas fa-check"></i> Sonido Nítido Pro</li>
+                    </ul>
+                    <a href="https://wa.me/524462975115?text=Info%20Paquete%204" class="btn">Reservar ahora</a>
+                </div>
+            </div>
+
+            <div class="card" data-cat="fiesta">
+                <img src="imagen audio_1.jpg" class="card-img">
+                <div class="card-content">
+                    <span class="pkg-num">Paquete 5</span>
+                    <h2 class="card-title">Fiesta Completa</h2>
+                    <div class="price-box"><div class="price">$520 <span>/ hr + traslado</span></div></div>
+                    <ul class="list">
+                        <li><i class="fas fa-check"></i> Subwoofer + 2 Medios</li>
+                        <li><i class="fas fa-check"></i> 2 Micrófonos + Luces</li>
+                        <li><i class="fas fa-check"></i> Soporte Técnico</li>
+                    </ul>
+                    <a href="https://wa.me/524462975115?text=Info%20Paquete%205" class="btn">Reservar ahora</a>
+                </div>
+            </div>
+
+            <div class="card" data-cat="basico">
+                <img src="image_audio e iluminación_1.jpg" class="card-img">
+                <div class="card-content">
+                    <span class="pkg-num">Paquete 7</span>
+                    <h2 class="card-title">Básico de Sonido</h2>
+                    <div class="price-box"><div class="price">$370 <span>/ hr + traslado</span></div></div>
+                    <ul class="list">
+                        <li><i class="fas fa-check"></i> 1 Subwoofer + 2 Medios</li>
+                        <li><i class="fas fa-check"></i> 1 Micrófono</li>
+                        <li><i class="fas fa-check"></i> Ideal para reuniones</li>
+                    </ul>
+                    <a href="https://wa.me/524462975115?text=Info%20Paquete%207" class="btn">Reservar ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border);">
+        &copy; 2026 DS AUDIO • Querétaro, MX
+    </footer>
+
+</body>
+</html>
